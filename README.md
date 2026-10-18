@@ -17,7 +17,7 @@
 
 ## 📖 简介
 
-hotkeyshield 是一个 **minecraft26.3 Fabric 客户端 Mod**，通过 Windows 低级键盘钩子（`WH_KEYBOARD_LL`）拦截系统级快捷键，让你的游戏按键不再被操作系统或输入法抢走。
+hotkeyshield 是一个 **minecraft-26.3 Fabric 客户端 Mod**，通过 Windows 低级键盘钩子（`WH_KEYBOARD_LL`）拦截系统级快捷键，让你的游戏按键不再被操作系统或输入法抢走。
 
 它解决的是一个很具体、也很常见的痛点：系统热键会占用快捷键
 
@@ -25,7 +25,7 @@ hotkeyshield 是一个 **minecraft26.3 Fabric 客户端 Mod**，通过 Windows �
 
 原因通常不是键盘坏了，也不是游戏 Bug，而是 **Windows 的 `Ctrl + 空格` 是输入法中英文切换热键**——它由 TSF/IMM 层处理，把空格当成"切换输入法"的指令吃掉了，游戏根本收不到这个按键。
 
-Khotkeyshield 的处理不是简单吞掉按键（那只会让空格彻底消失），而是：
+hotkeyshield 的处理不是简单吞掉按键（那只会让空格彻底消失），而是：
 
 ```
 原始事件: Ctrl↓  Space↓

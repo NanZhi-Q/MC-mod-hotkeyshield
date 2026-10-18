@@ -17,7 +17,7 @@
 
 ## 📖 简介
 
-KeyGuard 是一个 **Fabric 客户端 Mod**，通过 Windows 低级键盘钩子（`WH_KEYBOARD_LL`）拦截系统级快捷键，让你的游戏按键不再被操作系统或输入法抢走。
+KeyGuard 是一个 **Fabric 客户端 Mod**，通过 Windows 低级键盘钩子（`WH_KEYBOARD_LL`）拦截系统级快捷键，让你的游戏按键不再被操作系统存在的快捷键或中英文同时存在的输入法抢走。
 
 
 ---

@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"id": "hotkeyshield",
+	"version": "${version}",
+	"name": "Hotkey Shield",
+	"description": "在游戏中屏蔽 Windows 全局快捷键与输入法热键（Win 键、Alt+Tab、Ctrl+空格 等），让你的游戏按键不再被系统截走。",
+	"authors": [
+		"HotkeyShield"
+	],
+	"license": "MIT",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.hotkeyshield.HotkeyShieldClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25"
+	}
+}

@@ -1,6 +1,6 @@
 <div align="center">
 
-# KeyGuard · 按键卫士
+# KeyLock · 按键锁
 
 **按住 Ctrl 疾跑时按空格跳不起来？**
 
@@ -17,7 +17,7 @@
 
 ## 📖 简介
 
-KeyGuard 是一个 **Fabric 客户端 Mod**，通过 Windows 低级键盘钩子（`WH_KEYBOARD_LL`）拦截系统级快捷键，让你的游戏按键不再被操作系统存在的快捷键或中英文同时存在的输入法抢走。
+KeyLock 是一个 **Fabric 客户端 Mod**，通过 Windows 低级键盘钩子（`WH_KEYBOARD_LL`）拦截系统级快捷键，让你的游戏按键不再被操作系统存在的快捷键或中英文同时存在的输入法抢走。
 
 
 ---

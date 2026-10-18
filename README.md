@@ -17,7 +17,7 @@
 
 ## 📖 简介
 
-hotkeyshield 是一个 **Fabric 客户端 Mod**，通过 Windows 低级键盘钩子（`WH_KEYBOARD_LL`）拦截系统级快捷键，让你的游戏按键不再被操作系统或输入法抢走。
+hotkeyshield 是一个 **Minecraft 26.3 Fabric 客户端 Mod**，通过 Windows 低级键盘钩子（`WH_KEYBOARD_LL`）拦截系统级快捷键，让你的游戏按键不再被操作系统或输入法抢走。
 
 它解决的是一个很具体、也很常见的痛点：
 

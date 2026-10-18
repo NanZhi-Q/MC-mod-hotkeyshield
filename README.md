@@ -1,6 +1,6 @@
 <div align="center">
 
-# hotkeyshield · 热键锁
+# Hotkeyshield · 热键锁
 
 **按住 Ctrl 疾跑时按空格跳不起来？或者是游戏中总是按到win键？**
 

@@ -237,12 +237,6 @@ javac -h src/main/cpp src/main/java/com/hotkeyshield/WinKeyHook.java
 ## ❓ FAQ
 
 <details>
-<summary><b>为什么不用简单的做法，直接把 Ctrl+空格 删掉？</b></summary>
-
-那样空格会被彻底吞掉，游戏同样收不到跳跃键——只是把"被输入法抢走"换成了"被 Mod 抢走"。必须重映射才能两者兼得。
-</details>
-
-<details>
 <summary><b>会影响输入法正常使用吗？</b></summary>
 
 不会。只在 `Ctrl + 空格` 这个组合上做重映射，正常打字、`Shift` 切换中英文都不受影响。

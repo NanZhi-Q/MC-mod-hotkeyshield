@@ -1,0 +1,74 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+	id 'maven-publish'
+}
+
+// 让 version 取自 gradle.properties 的 mod_version
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+	// 本地镜像仓库（可选）。如果你有离线预置的依赖，放在工程根目录的 local-maven 下即可。
+	// 不存在时 Gradle 会跳过，不影响正常联网构建。
+	def localRepo = rootProject.file('local-maven')
+	if (localRepo.exists()) {
+		maven {
+			name = 'LocalMaven'
+			url = uri(localRepo)
+		}
+	}
+}
+
+loom {
+	mods {
+		"hotkeyshield" {
+			sourceSet sourceSets.main
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	// Fabric API（提供客户端命令与 tick 事件）
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+// Loom 1.18.4 在 26.3 上生成的 merged jar 可能为空（服务端已改为 bundle 格式），
+// 这时直接把重映射后的客户端 jar 补进编译 classpath，保证 Minecraft 类可见。
+// 路径基于 Gradle 的缓存目录推导，不含任何本机绝对路径。
+def clientJarFile = new File(
+		project.gradle.gradleUserHomeDir,
+		"caches/fabric-loom/${project.minecraft_version}/minecraft-client.jar")
+tasks.withType(JavaCompile).configureEach {
+	doFirst {
+		if (clientJarFile.exists() && clientJarFile.length() > 1024) {
+			classpath = files(clientJarFile) + classpath
+		}
+	}
+}
+
+processResources {
+	def ver = project.version
+	inputs.property "version", ver
+	// 强制按 UTF-8 读取，否则中文描述会被按 GBK 解析成乱码
+	filteringCharset = 'UTF-8'
+
+	filesMatching("fabric.mod.json") {
+		expand "version": ver
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+	it.options.encoding = "UTF-8"
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+base {
+	archivesName = project.archives_base_name
+}

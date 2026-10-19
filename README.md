@@ -227,7 +227,7 @@ javac -h src/main/cpp src/main/java/com/hotkeyshield/WinKeyHook.java
 
 ## ⚠️ 已知限制
 
-- **仅支持 64 位 Windows**，仅支持 Minecraft **26.3**
+- **仅支持 64 位 Windows**
 - 低级键盘钩子只对**物理键鼠**生效；部分键盘驱动的硬件级宏可能绕过
 - 部分杀毒软件会对"键盘钩子"行为报警，属正常现象，加白名单即可
 - 某些录屏/远程桌面软件自身的输入处理不受影响
@@ -245,7 +245,7 @@ javac -h src/main/cpp src/main/java/com/hotkeyshield/WinKeyHook.java
 <details>
 <summary><b>和 IMBlocker 冲突吗？</b></summary>
 
-不冲突。两者工作层面不同：IMBlocker 处理输入法焦点/候选框，KeyGuard 处理系统热键拦截。可以同时使用。
+不冲突。两者工作层面不同：IMBlocker 处理输入法焦点/候选框，hotkeyshield处理系统热键拦截。可以同时使用。
 </details>
 
 <details>
@@ -263,4 +263,3 @@ javac -h src/main/cpp src/main/java/com/hotkeyshield/WinKeyHook.java
 ## 🙏 致谢
 
 - [Fabric](https://fabricmc.net/) — Mod 加载器
-- 灵感来自无数个"Ctrl+空格 跳不起来"的求助帖
